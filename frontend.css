@@ -1,23 +1,187 @@
 
 
-.streakText{
-    color: orange;
+.container {
+    padding: 5rem;
+    background-color: lightblue;
     text-align: center;
+    background-image: url("images/bg.jpg");
+    border: 3px solid rgb(173, 74, 74);
+    background-size: cover;  /* Ensures the background image covers the container */
+    z-index: 2;
+    position: relative;
 }
 
-/* Buttons */
-.button {
-    display: inline-block;
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
+
+
+
+.body {
+    font-family: 'Trebuchet MS';
+    background-color: #f4f4f4;
     text-align: center;
-    border: none;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center; /* Centers the child */
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    
+    
+}
+
+/* Container for the calendar */
+.calendar-container {
+    text-align: center;
+    width: 80vw;  /* Adjust width to 80% of the viewport */
+    max-width: 350px;  /* Maximum width of the container */
+    padding: 10px;
+    background-color: rgb(250, 218, 37);
+    border: 2px solid orange;
+}
+
+/* Style for the month display at the top */
+#monthDisplay {
+    font-size: 18px;  /* Smaller font size */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style the calendar grid */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);  /* 7 columns for days of the week */
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+/* Style for each day cell */
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 5px;
-    text-decoration: none;
+    font-size: 14px;
+    height: 35px;
+    transition: background-color 0.3s;
 }
 
-.button:hover {
-    background: #0056b3;
+.day.checked-in {
+    background-color: rgb(157, 169, 25);
+    color: white;
 }
+
+/* Style for the check-in button */
+button {
+    margin-top: 15px;
+    padding: 12px 24px;  /* Adjust button padding */
+    font-size: px;  /* Smaller font size */
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    background-color: #cae80b;
+    color: rgb(67, 67, 66);
+    border-radius: 5px;
+    border-color: white;
+    width: 50%;  /* Make the button full width of the container */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Apply transition to background color and transform */
+}
+
+
+
+        /* Button hover effect */
+.button:hover {
+    background-color: #fbb8ff; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly grow the button */
+    }
+
+button:disabled {
+    background-color: rgb(169, 166, 166);
+    cursor: not-allowed;
+}
+
+/* Style for the check-in c
+
+
+/* Style for the check-in counter */
+p {
+    text-align: center;
+    font-size: 16px;  /* Smaller font size */
+    font-weight: bold;
+}
+
+
+@keyframes walk {
+    0% {
+        transform: translateX(-10vw); /* Start position */
+    }
+    100% {
+        transform: translateX(10vw); /* End position */
+    }
+}
+
+.dog {
+    position: relative; /* No need for absolute */
+    height: 200px;
+    animation: walk 5s linear infinite alternate;
+}
+
+
+.wallet {
+    position: absolute;  /* Allows precise positioning */
+    right: 33rem;  /* Moves it to the right edge */
+    bottom: 2rem; /* Aligns it to the bottom */
+    max-height: 8rem;
+    max-width: 8rem;
+}
+
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+/* Style for the floating banner */
+.banner {
+    position: absolute;
+    top: 0.01; /* Near the top of the screen */
+    left: 100%;
+    width: 50%;
+    background-color: rgba(234, 182, 182, 0.7); /* Semi-transparent background */
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    animation: slideLeft 20s linear infinite; /* Move banner left to right */
+}
+
+/* Animation for the banner sliding */
+@keyframes slideLeft {
+    0% {
+        left: 100%; /* Banner starts outside to the right */
+    }
+    50% {
+        left: 0;  /* Moves to the left side of the container */
+    }
+    100% {
+        left: -30%; /* Banner exits the container to the left */
+    }
+}
+

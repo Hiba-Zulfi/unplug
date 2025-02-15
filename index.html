@@ -2,14 +2,48 @@
 	<head>
 		<meta charset="UTF-8">
 		<title> Unplug </title>
-        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="frontend.css" title="style" /> 
         <script src="backend.js"></script>
 	</head>
 
-	<div class="container">
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the homepage content.</p>
-        </section>
-    </div>
+
+
+
+
+<body>
+
+
+<div class="container">
+    <div class="game-container">
+		<div class="banner" id="floatingBanner">
+			Nice To See You Today!
+		</div>
+        
+    <section id="streak">
+        <h2 style="color: rgb(147, 89, 41);"><span id="checkInCount">0 </span></h2>
+        <h2 style="color: rgb(147, 89, 41); text-align: center; font-family: 'Trebuchet MS' ;">Days Unplugged </h2>
+        
+    </section>      
+      
+			<div class="calendar-container"> 
+				<div id="monthDisplay"></div>  <!-- Display the month -->
+				<div class="calendar" id="calendar"></div>
+			</div>
+			
+			<button id="checkInButton" onclick="checkIn()">Check-In</button>
+		
+			<div class = "dog">    
+					
+				<img src="images/pet.gif" class = "dog">
+			</div>
+
+            <img src="images/wallet.png" class = "wallet">
+
+		</body>
+     </div>
+
+
+</div>
+
+
