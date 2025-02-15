@@ -57,13 +57,8 @@ function checkIn() {
     }, 86400000); // 24 hours (86400000ms)
 }
 
-const confettiCount = setTimeout(myGreeting, 5000);
 
-confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-  });
+
 
 // Initialize the calendar on page load
 window.onload = function () {
