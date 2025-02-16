@@ -1,15 +1,36 @@
 
 
-.container {
-    padding: 5rem;
-    background-color: lightblue;
-    text-align: center;
-    background-image: url("images/bg.jpg");
-    border: 3px solid rgb(173, 74, 74);
-    background-size: cover;  /* Ensures the background image covers the container */
-    z-index: 2;
+/*removed container*/
+
+/*--------*/
+.phone-screen {
+    width: 375px;  
+    height: 667px;  
+    border: 10px solid black;
+    border-radius: 20px;
+    overflow: hidden; /* Prevents content from overflowing */
     position: relative;
+    background: white;
+
 }
+
+.phone-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enables scrolling if needed */
+    display: flex;
+    flex-direction: column; /* Adjust this if your content layout needs changes */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("images/bg1.png"); 
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top -32px;;
+
+}
+/********/
 
 
 
@@ -45,10 +66,10 @@ body {
 .calendar-container {
     text-align: center;
     width: 80vw;  /* Adjust width to 80% of the viewport */
-    max-width: 350px;  /* Maximum width of the container */
-    padding: 10px;
-    background-color: rgb(250, 218, 37);
-    border: 2px solid orange;
+    max-width: 310px;  /* Maximum width of the container */ /*******/
+    padding: 7px; /******/
+    background-color: rgba(242, 244, 107, 0.416); /***********/
+    
 }
 
 /* Style for the month display at the top */
@@ -67,6 +88,8 @@ body {
     height: auto;
     padding: 5px;
 }
+
+
 
 /* Style for each day cell */
 .day {
@@ -87,7 +110,7 @@ body {
 }
 
 /* Style for the check-in button */
-button {
+#checkInButton {
     margin-top: 15px;
     padding: 12px 24px;  /* Adjust button padding */
     font-size: px;  /* Smaller font size */
@@ -102,6 +125,22 @@ button {
 }
 
 
+#DemoButton {
+   
+    position: absolute;  
+    bottom: 10px;   /* Near the top */
+    left: 10px; /* Near the right edge */
+    padding: 5px 10px;  /* Smaller padding than check-in button */
+    font-size: 12px;  /* Smaller font size */
+    font-family: 'Arial Narrow', Arial, sans-serif;
+
+    background-color: #ff6b6b; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
         /* Button hover effect */
 .button:hover {
@@ -124,7 +163,9 @@ p {
     font-weight: bold;
 }
 
-
+.block{
+    transform: translateY(-7rem);
+}
 @keyframes walk {
     0% {
         transform: translateX(-10vw); /* Start position */
@@ -133,20 +174,32 @@ p {
         transform: translateX(10vw); /* End position */
     }
 }
-
-.dog {
-    position: relative; /* No need for absolute */
-    height: 200px;
+.pet-container {
+    position: absolute;
+    bottom: 40px; /* Adjust to position the dog */
     animation: walk 5s linear infinite alternate;
+    display: flex;
+    flex-direction: column; /* Stack health bar above dog */
+    align-items: center; /* Center health bar above dog */
 }
 
+/* Dog styling */
+.dog {
+    height: 200px;
+}
 
+/* Health bar styling */
+.hb_max {
+    height: 20px; /* Adjust as needed */
+    width: auto; /* Adjust size to match dog */
+    transform: translateY(-3rem);
+}
 .wallet {
     position: absolute;  /* Allows precise positioning */
+    right: 33rem;  /* Moves it to the right edge */
     bottom: 2rem; /* Aligns it to the bottom */
     max-height: 8rem;
     max-width: 8rem;
-    padding-left: 4rem;
 }
 
 
@@ -159,12 +212,12 @@ html, body {
 /* Style for the floating banner */
 .banner {
     position: absolute;
-    padding-bottom: 95vh;
+    top: 3%; /* Near the top of the screen */ /*****/
     left: 100%;
-    width: 50%;
+    width: 70%; /*******/
     background-color: rgba(234, 182, 182, 0.7); /* Semi-transparent background */
     color: white;
-    font-size: 18px;
+    font-size: 12px;
     text-align: center;
     padding: 5px 10px;
     border-radius: 5px;
@@ -181,7 +234,154 @@ html, body {
         left: 0;  /* Moves to the left side of the container */
     }
     100% {
-        left: -30%; /* Banner exits the container to the left */
+        left: -100%; /* Banner exits the container to the left */ /*******/
     }
 }
+
+
+
+.skipped {
+    background-color: orange; /* Mark skipped days in orange */
+    color: white;
+}
+
+#skipMessage {
+    visibility: hidden;  /* Keeps space reserved but hides it */
+    opacity: 0;          /* Invisible by default */
+    background:orange;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+
+}
+
+
+/* Phone screen container */
+.phone-screen {
+    width: 375px;
+    height: 667px;
+    border: 10px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-color: white; /* Start with white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+}
+
+
+/*INTRO SCREEN CSS*/
+/* Phone screen container */
+.phone-screen {
+    width: 375px;
+    height: 667px;
+    border: 10px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Intro screen setup */
+.intro-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Start with white */
+    display: flex;
+    flex-direction: column;  /* Stack logo above text */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 3s forwards;  /* Fade from white to another color */
+}
+
+/* Fade-in animation for the intro screen background */
+@keyframes fadeIn {
+    0% {
+        background-color: white;
+        opacity: 0;
+    }
+    100% {
+        background-color: #CCCCFF; /* Change to your chosen color */
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation for logo and text */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;  /* Adjust width as needed */
+    height: auto;  /* Maintain aspect ratio */
+    opacity: 1;
+    animation: fadeOut 1s 2s forwards;  /* Fade out after 2s delay */
+    margin-bottom: 4px;  /* Adds space between the logo and the text */
+}
+
+
+/* Intro text styling */
+.intro-text {
+    font-size: 50px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 1;
+    animation: fadeOut 1s 2s forwards;  /* Fade out after 2s delay */
+    padding-bottom: 90px;
+}
+
+/* Main content styling */
+.phone-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;  /* Hidden initially */
+    transition: opacity 1s; /* Fade in after the animation */
+}
+
+/* After intro animation, reveal main content and hide intro screen */
+.phone-screen.loaded .phone-content {
+    opacity: 1;
+}
+
+.phone-screen.loaded .intro-screen {
+    display: none;
+}
+
+/* Prevent body scrolling */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
 
