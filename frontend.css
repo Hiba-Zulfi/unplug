@@ -143,10 +143,10 @@ p {
 
 .wallet {
     position: absolute;  /* Allows precise positioning */
-    right: 33rem;  /* Moves it to the right edge */
     bottom: 2rem; /* Aligns it to the bottom */
     max-height: 8rem;
     max-width: 8rem;
+    padding-left: 4rem;
 }
 
 
@@ -159,7 +159,7 @@ html, body {
 /* Style for the floating banner */
 .banner {
     position: absolute;
-    top: 0.01; /* Near the top of the screen */
+    padding-bottom: 95vh;
     left: 100%;
     width: 50%;
     background-color: rgba(234, 182, 182, 0.7); /* Semi-transparent background */
